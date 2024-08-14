@@ -93,11 +93,13 @@ La page web est accessible à l'adresse suivante :
 
 Configurez les paramètres d'email dans le fichier `.env` :
 
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.example.com
-MAIL_PORT=587
-MAIL_USERNAME=<your_email@example.com>
-MAIL_PASSWORD=your_email_password
-MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=<your_email@example.com>
-MAIL_FROM_NAME="${APP_NAME}"
+    
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.gmail.com
+    MAIL_PORT=465
+    MAIL_USERNAME=fabricetoyi87@gmail.com
+    MAIL_PASSWORD=fsropuktactxktqd
+    MAIL_ENCRYPTION=tls
+    MAIL_FROM_ADDRESS=fabricetoyi87@gmail.com
+    MAIL_FROM_NAME="${APP_NAME}"
+    
