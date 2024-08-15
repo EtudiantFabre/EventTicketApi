@@ -25,8 +25,8 @@ EventTicketingAPI est une API développée en PHP Laravel pour la gestion de bil
 1. Clonez le dépôt :
 
     ```bash
-    git clone https://github.com/votre-utilisateur/EventTicketingAPI.git
-    cd EventTicketingAPI
+    git clone https://github.com/votre-utilisateur/event-ticket-api.git
+    cd event-ticket-api
     ```
 
 2. Installez les dépendances :
@@ -35,7 +35,7 @@ EventTicketingAPI est une API développée en PHP Laravel pour la gestion de bil
     composer install
     ```
 
-3. Copiez le fichier `.env.example` en `.env` et configurez vos paramètres de base de données :
+3. Créez un fichier `.env` à partir du fichier d'exemple :
 
     ```bash
     cp .env.example .env
@@ -47,16 +47,17 @@ EventTicketingAPI est une API développée en PHP Laravel pour la gestion de bil
     php artisan key:generate
     ```
 
-5. Exécutez les migrations pour créer les tables :
+5. Configurez votre base de données dans le fichier `.env`. Par exemple, pour SQLite :
 
-    ```bash
-    php artisan migrate
+    ```env
+    DB_CONNECTION=sqlite
+    DB_DATABASE=/chemin/vers/votre/database.sqlite
     ```
 
-6. Démarrez le serveur de développement :
+6. Exécutez les migrations et les seeders :
 
     ```bash
-    php artisan serve
+    php artisan migrate:fresh --seed
     ```
 
 ## Utilisation
@@ -93,7 +94,6 @@ La page web est accessible à l'adresse suivante :
 
 Configurez les paramètres d'email dans le fichier `.env` :
 
-    
     MAIL_MAILER=smtp
     MAIL_HOST=smtp.gmail.com
     MAIL_PORT=465
@@ -102,4 +102,3 @@ Configurez les paramètres d'email dans le fichier `.env` :
     MAIL_ENCRYPTION=tls
     MAIL_FROM_ADDRESS=fabricetoyi87@gmail.com
     MAIL_FROM_NAME="${APP_NAME}"
-    
