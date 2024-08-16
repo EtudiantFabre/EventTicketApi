@@ -13,6 +13,7 @@ class TicketTypesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        // Create 10 ticket types using the factory
         TicketType::factory()->count(10)->create();
     }
 }

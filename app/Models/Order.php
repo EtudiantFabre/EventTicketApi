@@ -20,11 +20,17 @@ class Order extends Model
         'order_info',
     ];
 
+    /**
+     * Get the event that owns the order.
+     */
     public function event()
     {
         return $this->belongsTo(Event::class, 'order_event_id', 'event_id');
     }
 
+    /**
+     * Get the tickets for the order.
+     */
     public function tickets()
     {
         return $this->hasMany(Ticket::class, 'ticket_order_id', 'order_id');

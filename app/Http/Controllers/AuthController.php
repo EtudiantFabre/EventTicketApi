@@ -9,17 +9,18 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
-        //validate fields
+        // Validate fields
         $attrs = $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 
+        // Attempt to authenticate the user
         if (!Auth::attempt($attrs)) {
             return response(['message' => 'Invalid credentials.'], 403);
         }
 
-        //  return user & token in response
+        // Return user & token in response
         return response()->json([
             'user' => auth()->user(),
             'token' => auth()->user()->createToken('secret')->plainTextToken

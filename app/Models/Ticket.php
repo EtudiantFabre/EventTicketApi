@@ -22,16 +22,25 @@ class Ticket extends Model
         'ticket_status',
     ];
 
+    /**
+     * Get the event that owns the ticket.
+     */
     public function event()
     {
         return $this->belongsTo(Event::class, 'ticket_event_id', 'event_id');
     }
 
+    /**
+     * Get the order that owns the ticket.
+     */
     public function order()
     {
         return $this->belongsTo(Order::class, 'ticket_order_id', 'order_id');
     }
 
+    /**
+     * Get the ticket type that owns the ticket.
+     */
     public function ticketType()
     {
         return $this->belongsTo(TicketType::class, 'ticket_ticket_type_id', 'ticket_type_id');

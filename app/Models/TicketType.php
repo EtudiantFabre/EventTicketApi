@@ -21,11 +21,17 @@ class TicketType extends Model
         'ticket_type_description',
     ];
 
+    /**
+     * Get the event that owns the ticket type.
+     */
     public function event()
     {
         return $this->belongsTo(Event::class, 'ticket_type_event_id', 'event_id');
     }
 
+    /**
+     * Get the tickets for the ticket type.
+     */
     public function tickets()
     {
         return $this->hasMany(Ticket::class, 'ticket_ticket_type_id', 'ticket_type_id');

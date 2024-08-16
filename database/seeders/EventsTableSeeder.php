@@ -13,6 +13,7 @@ class EventsTableSeeder extends Seeder
      */
     public function run(): void
     {
+        // Create 10 events using the factory
         Event::factory()->count(10)->create();
     }
 }

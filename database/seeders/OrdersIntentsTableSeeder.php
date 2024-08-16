@@ -13,6 +13,7 @@ class OrdersIntentsTableSeeder extends Seeder
      */
     public function run(): void
     {
+        // Create 10 order intents using the factory
         OrderIntent::factory()->count(10)->create();
     }
 }
